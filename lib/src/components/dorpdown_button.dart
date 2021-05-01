@@ -3,7 +3,8 @@ import 'package:flutter_dropdown_sample/src/controller/dropdown_button_controlle
 import 'package:get/get_state_manager/get_state_manager.dart';
 
 class DropdownButtonWidget extends GetView<DropdownButtonController> {
-  DropdownButtonWidget({Key? key}) : super(key: key);
+  final bool isExpanded;
+  DropdownButtonWidget({Key? key, this.isExpanded = false}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -13,6 +14,8 @@ class DropdownButtonWidget extends GetView<DropdownButtonController> {
         onChanged: (int? value) {
           controller.changeDropDownMenu(value);
         },
+        underline: Container(),
+        isExpanded: isExpanded,
         items: DropdownMenu.values
             .map(
               (menu) => DropdownMenuItem(

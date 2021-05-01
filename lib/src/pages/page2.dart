@@ -5,8 +5,11 @@ class Page2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text("page2"),
+    return Container(
+      color: Colors.red[300],
+      child: Center(
+        child: Text("page2"),
+      ),
     );
   }
 }
