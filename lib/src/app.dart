@@ -49,14 +49,14 @@ class App extends GetView<DropdownButtonController> {
       ),
       bottomNavigationBar: Container(
         padding: EdgeInsets.only(bottom: Get.mediaQuery.padding.bottom),
-        // child: Padding(
-        //   padding: const EdgeInsets.all(15.0),
-        //   child: PopupMenuButtonWidget(),
-        // ),
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 15),
-          child: DropdownButtonWidget(isExpanded: true),
+          padding: const EdgeInsets.all(15.0),
+          child: PopupMenuButtonWidget(),
         ),
+        // child: Padding(
+        //   padding: const EdgeInsets.symmetric(horizontal: 15),
+        //   child: DropdownButtonWidget(isExpanded: true),
+        // ),
       ),
     );
   }

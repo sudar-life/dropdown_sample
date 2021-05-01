@@ -10,6 +10,9 @@ class PopupMenuButtonWidget extends GetView<DropdownButtonController> {
   Widget build(BuildContext context) {
     return PopupMenuButton(
       elevation: 0,
+      onSelected: (int? index) {
+        controller.changeDropDownMenu(index);
+      },
       offset: Offset(0, 0),
       shape: ShapeBorder.lerp(
           RoundedRectangleBorder(
