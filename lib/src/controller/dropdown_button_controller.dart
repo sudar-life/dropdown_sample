@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 
@@ -19,10 +20,17 @@ extension DropdownMenusExtension on DropdownMenu {
 class DropdownButtonController extends GetxController {
   static DropdownButtonController get to => Get.find();
   Rx<DropdownMenu> currentItem = DropdownMenu.DEFAULT.obs;
+  final dropKey = GlobalKey();
 
   void changeDropDownMenu(int? itemIndex) {
     var selectedItem =
         DropdownMenu.values.where((menu) => menu.index == itemIndex).first;
     currentItem(selectedItem);
+  }
+
+  double get dropdownPositionY {
+    var box = dropKey.currentContext!.findRenderObject()!;
+    var position = box.paintBounds.bottomCenter; //this is global position
+    return position.dy;
   }
 }

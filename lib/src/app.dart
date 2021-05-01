@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_dropdown_sample/src/components/dorpdown_button.dart';
+import 'package:flutter_dropdown_sample/src/components/dropdown_button_custom.dart';
 import 'package:flutter_dropdown_sample/src/controller/dropdown_button_controller.dart';
 import 'package:flutter_dropdown_sample/src/pages/default.dart';
 import 'package:flutter_dropdown_sample/src/pages/page1.dart';
@@ -8,7 +9,7 @@ import 'package:get/get.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 
 class App extends GetView<DropdownButtonController> {
-  const App({Key? key}) : super(key: key);
+  App({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -17,10 +18,12 @@ class App extends GetView<DropdownButtonController> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
+            DropDownCustomWidget(
+              key: controller.dropKey,
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                DropdownButtonWidget(),
                 DropdownButtonWidget(),
                 DropdownButtonWidget(),
               ],
