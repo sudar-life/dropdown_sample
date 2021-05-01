@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_dropdown_sample/src/components/dorpdown_button.dart';
 import 'package:flutter_dropdown_sample/src/components/dropdown_button_custom.dart';
+import 'package:flutter_dropdown_sample/src/components/popup_menu_button.dart';
 import 'package:flutter_dropdown_sample/src/controller/dropdown_button_controller.dart';
 import 'package:flutter_dropdown_sample/src/pages/default.dart';
 import 'package:flutter_dropdown_sample/src/pages/page1.dart';
@@ -24,7 +25,7 @@ class App extends GetView<DropdownButtonController> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                DropdownButtonWidget(),
+                Expanded(child: PopupMenuButtonWidget()),
                 DropdownButtonWidget(),
               ],
             ),
@@ -48,7 +49,14 @@ class App extends GetView<DropdownButtonController> {
       ),
       bottomNavigationBar: Container(
         padding: EdgeInsets.only(bottom: Get.mediaQuery.padding.bottom),
-        child: DropdownButtonWidget(isExpanded: true),
+        // child: Padding(
+        //   padding: const EdgeInsets.all(15.0),
+        //   child: PopupMenuButtonWidget(),
+        // ),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 15),
+          child: DropdownButtonWidget(isExpanded: true),
+        ),
       ),
     );
   }
