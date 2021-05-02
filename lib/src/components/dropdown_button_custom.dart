@@ -80,7 +80,7 @@ class DropDownList extends GetView<DropdownButtonController> {
             ),
             Positioned(
               left: 0,
-              top: Get.mediaQuery.padding.top + controller.dropdownPositionY,
+              top: controller.dropdownPositionY,
               child: Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.only(

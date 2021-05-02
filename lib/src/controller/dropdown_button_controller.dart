@@ -30,7 +30,10 @@ class DropdownButtonController extends GetxController {
 
   double get dropdownPositionY {
     var box = dropKey.currentContext!.findRenderObject()!;
-    var position = box.paintBounds.bottomCenter; //this is global position
-    return position.dy;
+    var translation = box.getTransformTo(null).getTranslation();
+    return box.paintBounds
+        .shift(Offset(translation.x, translation.y))
+        .bottomCenter
+        .dy;
   }
 }
